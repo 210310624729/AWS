@@ -1,0 +1,5 @@
+.syndicate
+logs/
+.syndicate-config-*/
+package.json
+package-lock.json
