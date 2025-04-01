@@ -181,6 +181,8 @@ async function handleCreateTable(event) {
   await dynamodb.put(params).promise();
   return formatResponse(200, { id: tableId });
 }
+
+//Get Table detailed by Id
 async function handleGetTableById(event) {
   const username = getUsernameFromToken(event);
   if (!username) {
@@ -312,6 +314,8 @@ async function handleCreateReservation(event) {
     return formatResponse(500, { message: "Internal Server Error" });
   }
 }
+
+// Helper function to extract username from token
 function getUsernameFromToken(event) {
   try {
     if (event.requestContext && event.requestContext.authorizer &&
